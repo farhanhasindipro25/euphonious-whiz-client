@@ -2,6 +2,7 @@ import React from "react";
 import Services from "../../Services/Services";
 import ServiceBooking from "../ServiceBooking/ServiceBooking";
 import SlidingBanner from "../SlidingBanner/SlidingBanner";
+import WorkingProcess from "../WorkingProcess/WorkingProcess";
 
 const Home = () => {
   return (
@@ -19,6 +20,10 @@ const Home = () => {
       {/* Book a Service */}
       <div>
         <ServiceBooking></ServiceBooking>
+      </div>
+      {/* My Working Process */}
+      <div>
+        <WorkingProcess></WorkingProcess>
       </div>
     </div>
   );
