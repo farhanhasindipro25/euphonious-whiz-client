@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
-import ServiceCard from "./ServiceCard";
+import LimitedServiceCard from "./LimitedServiceCard";
 
-const Services = () => {
-  const [services, setServices] = useState([]);
+const LimitedServices = () => {
+  const [limitedServices, setLimitedServices] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/services")
       .then((response) => response.json())
-      .then((data) => setServices(data));
+      .then((data) => setLimitedServices(data));
   }, []);
   return (
     <div className="container mb-5 mt-5">
       <Container>
         <Row className="g-5">
-          {services.map((service) => (
-            <ServiceCard key={service._id} service={service}></ServiceCard>
+          {limitedServices.map((service) => (
+            <LimitedServiceCard
+              key={service._id}
+              service={service}
+            ></LimitedServiceCard>
           ))}
         </Row>
       </Container>
@@ -23,4 +26,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default LimitedServices;
