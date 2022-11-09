@@ -8,8 +8,8 @@ const ServiceBooking = () => {
   return (
     <div>
       <div className="container mb-5">
-        <Card>
-          <Card.Body>
+        <Card className="bg-dark rounded-0">
+          <Card.Body className="text-white">
             <h3 className="fw-bold text-center mt-3 mb-5">
               Book a service online, or visit my store.
             </h3>
