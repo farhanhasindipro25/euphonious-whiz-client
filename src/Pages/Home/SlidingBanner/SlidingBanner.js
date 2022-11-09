@@ -19,7 +19,7 @@ const SlidingBanner = () => {
           <Carousel.Caption className="mb-5 pb-5">
             <h2>
               Find service reviews of{" "}
-              <span className="fw-bold bg-white text-dark p-2">
+              <span className="fw-bold bg-dark text-warning p-2">
                 Euphonious Whiz
               </span>
               , and add your own!
