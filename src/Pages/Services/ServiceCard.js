@@ -41,7 +41,7 @@ const ServiceCard = ({ service }) => {
               to={`/services/${_id}`}
               className="text-decoration-none text-white"
             >
-              View Details and Reviews
+              VIEW DETAILS AND REVIEWS
             </Link>
           </Button>
         </Card.Body>

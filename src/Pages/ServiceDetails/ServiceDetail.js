@@ -3,10 +3,18 @@ import { Link, useLoaderData } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import ReviewItem from "./Reviews/ReviewItem";
+import { Container, Row } from "react-bootstrap";
 
 const ServiceDetail = () => {
-  const { _id, serviceName, serviceImage, price, description, generalRating, reviews } =
-    useLoaderData();
+  const {
+    _id,
+    serviceName,
+    serviceImage,
+    price,
+    description,
+    generalRating,
+    reviews,
+  } = useLoaderData();
   return (
     <div className="container mb-5 pt-5 pb-5">
       <Card className="rounded-0">
@@ -34,10 +42,25 @@ const ServiceDetail = () => {
       </Card>
 
       <div>
-        <h4 className="my-5 text-center">Reviews of <span className="bg-dark text-white p-2">{serviceName}</span></h4>
-        {
-            reviews.map(review => <ReviewItem></ReviewItem>)
-        }
+        <h4 className="my-5 text-center">
+          Reviews of{" "}
+          <span className="bg-dark text-white p-2">{serviceName}</span>
+        </h4>
+        <Container>
+          <Row className="g-5">
+            {reviews.map((review) => (
+              <ReviewItem key={review._id} review={review}></ReviewItem>
+            ))}
+          </Row>
+        </Container>
+        <Button
+          variant="dark"
+          className="rounded-0 fw-semibold d-block mx-auto mt-5"
+        >
+          <Link to="/addreview" className="text-decoration-none text-white">
+            ADD REVIEW
+          </Link>
+        </Button>
       </div>
     </div>
   );
