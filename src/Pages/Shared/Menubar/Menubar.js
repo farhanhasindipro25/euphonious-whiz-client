@@ -50,7 +50,7 @@ const Menubar = () => {
               </Link>
               <Link
                 to="/signup"
-                className="text-decoration-none fw-semibold text-dark mx-5"
+                className="text-decoration-none fw-semibold text-dark ms-5"
               >
                 Signup
               </Link>

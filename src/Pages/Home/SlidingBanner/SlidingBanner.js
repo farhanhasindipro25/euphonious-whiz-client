@@ -16,12 +16,46 @@ const SlidingBanner = () => {
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
           <img className="d-block w-100" src={slide1} alt="First slide" />
+          <Carousel.Caption className="mb-5 pb-5">
+            <h2>
+              Find service reviews of{" "}
+              <span className="fw-bold bg-white text-dark p-2">
+                Euphonious Whiz
+              </span>
+              , and add your own!
+            </h2>
+            <p className="mb-5 pb-5">
+              Don't be afraid to give a negative review!
+            </p>
+          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={slide2} alt="Second slide" />
+          <Carousel.Caption className="mb-5 pb-5">
+            <h2>
+              Find service reviews of{" "}
+              <span className="fw-bold text-dark bg-warning p-2">
+                Euphonious Whiz
+              </span>
+              , and add your own!
+            </h2>
+            <p className="mb-5 pb-5">
+              Don't be afraid to give a negative review!
+            </p>
+          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={slide3} alt="Third slide" />
+          <Carousel.Caption className="mb-5 pb-5">
+            <h2>
+              Find service reviews of{" "}
+              <span className="fw-bold bg-danger p-2">Euphonious Whiz</span>,
+              and add your own!
+            </h2>
+            <p className="mb-5 pb-5">
+              Don't be afraid to give a negative review!
+            </p>
+          </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
     </div>
