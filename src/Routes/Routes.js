@@ -11,44 +11,46 @@ const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../Layouts/Main");
 
 const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Main></Main>,
-        children: [
-            {
-                path: '/',
-                element: <Home></Home>,
-            },
-            {
-                path: '/blog',
-                element: <Blog></Blog>,
-            },
-            {
-                path: '/services',
-                element: <Services></Services>
-            },
-            {
-                path: '/services/:id',
-                element: <ServiceDetail></ServiceDetail>
-            },
-            {
-                path: '/login',
-                element: <Login></Login>
-            },
-            {
-                path: '/signup',
-                element: <Signup></Signup>
-            },
-            {
-                path: '/myreviews',
-                element: <MyReviews></MyReviews>
-            },
-            {
-                path: '/addservice',
-                element: <AddService></AddService>
-            }
-        ]
-    }
-])
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "/services",
+        element: <Services></Services>,
+      },
+      {
+        path: "/services/:id",
+        element: <ServiceDetail></ServiceDetail>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/services/${params.id}`),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signup",
+        element: <Signup></Signup>,
+      },
+      {
+        path: "/myreviews",
+        element: <MyReviews></MyReviews>,
+      },
+      {
+        path: "/addservice",
+        element: <AddService></AddService>,
+      },
+    ],
+  },
+]);
 
 export default router;

@@ -7,6 +7,9 @@ import { Link } from "react-router-dom";
 const ServiceCard = ({ service }) => {
   const { _id, serviceName, serviceImage, price, description, generalRating } =
     service;
+  const getId = (event) => {
+    console.log(event);
+  };
   return (
     <Col lg="4" md="6" sm="12">
       <Card className="rounded-0">
@@ -28,11 +31,19 @@ const ServiceCard = ({ service }) => {
             </p>
           </div>
           <Card.Text>{description.slice(0, 100) + "..."}</Card.Text>
-          <Link className="text-decoration-none" to={`/services/${_id}`}>
-            <Button variant="dark" className="rounded-0 d-block mx-auto">
+
+          <Button
+            variant="dark"
+            className="rounded-0 d-block mx-auto"
+            onClick={() => getId(_id)}
+          >
+            <Link
+              to={`/services/${_id}`}
+              className="text-decoration-none text-white"
+            >
               View Details and Reviews
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </Card.Body>
       </Card>
     </Col>

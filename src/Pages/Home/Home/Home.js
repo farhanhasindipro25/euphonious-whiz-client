@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import LimitedServices from "../../Services/LimitedServices";
+import Services from "../../Services/Services";
 import ServiceBooking from "../ServiceBooking/ServiceBooking";
 import SlidingBanner from "../SlidingBanner/SlidingBanner";
 import WorkingProcess from "../WorkingProcess/WorkingProcess";
@@ -20,7 +20,7 @@ const Home = () => {
           </span>
         </h6>
         <div className="mt-5 mb-5">
-          <LimitedServices></LimitedServices>
+          <Services></Services>
           <Link to="/services" className="text-decoration-none">
             <Button className="rounded-0 d-block mx-auto" variant="dark">
               View All Services
