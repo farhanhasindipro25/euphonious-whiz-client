@@ -23,7 +23,9 @@ const Footer = () => {
         <h6 className="text-white">Signup</h6>
       </div>
       <div>
-        <p className="text-white text-center pb-3 mb-0">Made with MERNB</p>
+        <p className="text-white text-center pb-3 mb-0">
+          Made with MERN stack and React-Bootstrap
+        </p>
         <p className="text-white text-center pb-5 mb-0">
           <small>Copyright © 2022. Euphonious Whiz Service Reviews</small>
         </p>

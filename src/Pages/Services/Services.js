@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 
 const Services = () => {
   return (
-    <div className="container">
+    <div className="container mb-5 mt-5">
       <Row xs={1} md={2} lg={3} className="g-4">
         {Array.from({ length: 6 }).map((_, idx) => (
           <Col>

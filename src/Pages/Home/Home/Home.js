@@ -17,7 +17,9 @@ const Home = () => {
             Euphonious Whiz
           </span>
         </h6>
-        <Services></Services>
+        <div className="mt-5 mb-5">
+          <Services></Services>
+        </div>
       </div>
 
       {/* Book a Service */}

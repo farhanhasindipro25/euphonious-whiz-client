@@ -25,7 +25,7 @@ const Menubar = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
               <Link
-                to="/home"
+                to="/"
                 className="text-decoration-none fw-semibold text-white mx-5"
               >
                 Home
