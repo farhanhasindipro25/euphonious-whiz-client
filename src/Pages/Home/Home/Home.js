@@ -9,11 +9,14 @@ const Home = () => {
     <div>
       <SlidingBanner></SlidingBanner>
       {/* Services */}
-      <div className="mb-5">
+      <div className="mb-5 pt-5">
         <h3 className="text-center fw-bold">Services</h3>
-        <p className="text-center mb-5">
-          Check out the most demanding services provided by Euphonious Whiz
-        </p>
+        <h6 className="text-center mb-5 fw-normal">
+          Check out the most demanding services provided by{" "}
+          <span className="fw-semibold bg-dark p-2 text-warning">
+            Euphonious Whiz
+          </span>
+        </h6>
         <Services></Services>
       </div>
 

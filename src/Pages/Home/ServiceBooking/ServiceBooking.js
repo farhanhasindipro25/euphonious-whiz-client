@@ -10,7 +10,7 @@ const ServiceBooking = () => {
       <div className="container mb-5">
         <Card className="bg-dark rounded-0">
           <Card.Body className="text-white">
-            <h3 className="fw-bold text-center mt-3 mb-5">
+            <h3 className="fw-bold text-center mt-3 mb-5 text-warning">
               Book a service online, or visit my store.
             </h3>
             <div>

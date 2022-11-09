@@ -4,7 +4,7 @@ import 'typeface-montserrat';
 
 function App() {
   return (
-    <div style={{fontFamily: 'montserrat'}}>
+    <div style={{fontFamily: 'montserrat'}} className='bg-warning'>
       <RouterProvider router={router}></RouterProvider>
     </div>
   );

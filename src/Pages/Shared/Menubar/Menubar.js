@@ -10,14 +10,14 @@ const Menubar = () => {
       <Navbar
         collapseOnSelect
         expand="lg"
-        bg="light"
-        variant="light"
+        bg="dark"
+        variant="dark"
         className="py-5"
       >
         <Container>
           <Link
             to="/"
-            className="text-decoration-none fw-semibold text-dark fs-5"
+            className="text-decoration-none fw-semibold text-white fs-5"
           >
             EUPHONIOUS WHIZ REVIEWS
           </Link>
@@ -26,31 +26,31 @@ const Menubar = () => {
             <Nav className="ms-auto">
               <Link
                 to="/home"
-                className="text-decoration-none fw-semibold text-dark mx-5"
+                className="text-decoration-none fw-semibold text-white mx-5"
               >
                 Home
               </Link>
               <Link
                 to="/blog"
-                className="text-decoration-none fw-semibold text-dark mx-5"
+                className="text-decoration-none fw-semibold text-white mx-5"
               >
                 Blog
               </Link>
               <Link
                 to="/services"
-                className="text-decoration-none fw-semibold text-dark mx-5"
+                className="text-decoration-none fw-semibold text-white mx-5"
               >
                 Services
               </Link>
               <Link
                 to="/login"
-                className="text-decoration-none fw-semibold text-dark mx-5"
+                className="text-decoration-none fw-semibold text-white mx-5"
               >
                 Login
               </Link>
               <Link
                 to="/signup"
-                className="text-decoration-none fw-semibold text-dark ms-5"
+                className="text-decoration-none fw-semibold text-white ms-5"
               >
                 Signup
               </Link>

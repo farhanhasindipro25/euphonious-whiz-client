@@ -3,13 +3,13 @@ import ListGroup from "react-bootstrap/ListGroup";
 
 const WorkingProcess = () => {
   return (
-    <div>
+    <div className="pb-5">
       <div>
-        <h3 className="text-center fw-bold mb-5">
+        <h3 className="text-center fw-bold mb-5 pt-5">
           Get familiar with my working process
         </h3>
-        <div className="container">
-          <ListGroup className="mb-5 rounded-0">
+        <div className="container mb-5">
+          <ListGroup className="rounded-0">
             <ListGroup.Item className="p-4 text-center text-white bg-dark fw-normal">
               For small instruments, I will visit your place and provide home
               service.
@@ -35,7 +35,7 @@ const WorkingProcess = () => {
               You can pay me in bkash, nogod, bank, or cash. No advance payments
               needed.
             </ListGroup.Item>
-            <ListGroup.Item className="p-4 text-center bg-dark text-success fw-semibold">
+            <ListGroup.Item className="p-4 text-center bg-dark text-warning fw-semibold">
               I would love to jam with you anytime.
             </ListGroup.Item>
           </ListGroup>
