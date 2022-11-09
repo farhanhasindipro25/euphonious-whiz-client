@@ -44,7 +44,7 @@ const Menubar = () => {
               </Link>
               <Link
                 to="/login"
-                className="text-decoration-none fw-semibold text-dark bg-light p-3 ms-5"
+                className="text-decoration-none fw-semibold text-white p-3 ms-3"
               >
                 Login
               </Link>

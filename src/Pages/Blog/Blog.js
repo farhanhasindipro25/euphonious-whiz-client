@@ -5,7 +5,7 @@ const Blog = () => {
   return (
     <div className="container mt-5 mb-5">
       <Accordion defaultActiveKey={["0", "1", "2", "3"]} alwaysopen>
-        <Accordion.Item>
+        <Accordion.Item eventKey="0">
           <Accordion.Header>Difference between SQL and NoSQL.</Accordion.Header>
           <Accordion.Body>
             SQL is a structured query language used for interfacing with
@@ -22,7 +22,7 @@ const Blog = () => {
             collections in key-value pairs, overally stored as a document.
           </Accordion.Body>
         </Accordion.Item>
-        <Accordion.Item>
+        <Accordion.Item eventKey="1">
           <Accordion.Header>
             What is JWT and how does it work?{" "}
           </Accordion.Header>
@@ -35,7 +35,7 @@ const Blog = () => {
             altered by a third party after a token has been issued.
           </Accordion.Body>
         </Accordion.Item>
-        <Accordion.Item>
+        <Accordion.Item eventKey="2">
           <Accordion.Header>
             Difference between Javascript and NodeJS.{" "}
           </Accordion.Header>
@@ -54,7 +54,7 @@ const Blog = () => {
             development.
           </Accordion.Body>
         </Accordion.Item>
-        <Accordion.Item>
+        <Accordion.Item eventKey="3">
           <Accordion.Header>
             How does NodeJS handle multiple requests at the same time?
           </Accordion.Header>

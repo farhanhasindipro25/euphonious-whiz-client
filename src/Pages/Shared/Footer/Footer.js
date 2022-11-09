@@ -33,7 +33,7 @@ const Footer = () => {
           Signup
         </Link>
       </div>
-      <div>
+      <div className="pb-5">
         <p className="text-white text-center pb-3 mb-0">
           Made with MERN stack and React-Bootstrap
         </p>
