@@ -1,6 +1,7 @@
 import React from "react";
 import { GrFacebook } from "react-icons/gr";
 import { BsInstagram, BsTwitch, BsYoutube } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -15,12 +16,22 @@ const Footer = () => {
         <BsYoutube></BsYoutube>
         <BsTwitch></BsTwitch>
       </div>
-      <div className="d-flex container justify-content-evenly pb-5">
-        <h6 className="text-white">Home</h6>
-        <h6 className="text-white">Blog</h6>
-        <h6 className="text-white">Services</h6>
-        <h6 className="text-white">Login</h6>
-        <h6 className="text-white">Signup</h6>
+      <div className="d-flex container justify-content-evenly mb-5 pb-5 w-50">
+        <Link to="/" className="text-white text-decoration-none">
+          Home
+        </Link>
+        <Link to="/blog" className="text-white text-decoration-none">
+          Blog
+        </Link>
+        <Link to="/services" className="text-white text-decoration-none">
+          Services
+        </Link>
+        <Link to="/login" className="text-white text-decoration-none">
+          Login
+        </Link>
+        <Link to="/signup" className="text-white text-decoration-none">
+          Signup
+        </Link>
       </div>
       <div>
         <p className="text-white text-center pb-3 mb-0">

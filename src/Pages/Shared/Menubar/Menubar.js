@@ -12,7 +12,7 @@ const Menubar = () => {
         expand="lg"
         bg="dark"
         variant="dark"
-        className="py-5"
+        className="py-4"
       >
         <Container>
           <Link
@@ -23,7 +23,7 @@ const Menubar = () => {
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className="ms-auto d-flex align-items-center">
               <Link
                 to="/"
                 className="text-decoration-none fw-semibold text-white mx-5"
@@ -44,7 +44,7 @@ const Menubar = () => {
               </Link>
               <Link
                 to="/login"
-                className="text-decoration-none fw-semibold text-white ms-5"
+                className="text-decoration-none fw-semibold text-dark bg-light p-3 ms-5"
               >
                 Login
               </Link>
