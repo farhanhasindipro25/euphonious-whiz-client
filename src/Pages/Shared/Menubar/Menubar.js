@@ -44,15 +44,9 @@ const Menubar = () => {
               </Link>
               <Link
                 to="/login"
-                className="text-decoration-none fw-semibold text-white mx-5"
-              >
-                Login
-              </Link>
-              <Link
-                to="/signup"
                 className="text-decoration-none fw-semibold text-white ms-5"
               >
-                Signup
+                Login
               </Link>
             </Nav>
           </Navbar.Collapse>

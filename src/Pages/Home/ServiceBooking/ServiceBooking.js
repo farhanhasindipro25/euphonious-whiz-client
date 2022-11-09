@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { BsFillTelephoneFill } from "react-icons/bs";
-import { MdLocationOn } from "react-icons/md";
+import { MdEmail, MdLocationOn } from "react-icons/md";
 import { GrFacebook } from "react-icons/gr";
 
 const ServiceBooking = () => {
@@ -17,6 +17,10 @@ const ServiceBooking = () => {
               <div className="d-flex justify-content-center gap-2">
                 <BsFillTelephoneFill className="mt-1"></BsFillTelephoneFill>
                 <p>+8801710171017</p>
+              </div>
+              <div className="d-flex justify-content-center gap-2">
+                <MdEmail className="mt-1"></MdEmail>
+                <p>euphoniouswhiz@gmail.com</p>
               </div>
               <div className="d-flex justify-content-center gap-2">
                 <MdLocationOn className="mt-1"></MdLocationOn>
