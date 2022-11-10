@@ -51,8 +51,10 @@ const router = createBrowserRouter([
         element: <AddService></AddService>,
       },
       {
-        path: "/addreview",
+        path: "/addreview/:id",
         element: <AddReviewForm></AddReviewForm>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/addreview/${params.id}`),
       },
     ],
   },
