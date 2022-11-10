@@ -17,12 +17,12 @@
 3. React-Hot-Toast.
 4. React-Photo-View
 
--Backend
+- Backend
 1. NodeJS.
 2. ExpressJS.
 3. MongoDB.
 
--Authentication
+- Authentication
 1. Firebase.
 
 ###Default User Login:
