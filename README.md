@@ -1,5 +1,7 @@
 # EUPHONIOUS WHIZ
 **A website based on service reviews of a person who fixes musical instruments.**
+
+
 **Live Site Link: https://euphonious-whiz.web.app**
 
 ### Features
@@ -25,7 +27,7 @@
 - Authentication
 1. Firebase.
 
-###Default User Login:
+### Default User Login:
 
 ```
 email: dead@shots.com
