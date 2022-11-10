@@ -1,39 +1,45 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { toast } from "react-hot-toast";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import useTitle from "../../../Hooks/useTitle";
+import ReviewItem from "./ReviewItem";
 
 const AddReviewForm = () => {
   useTitle("Add Review");
+  const navigate = useNavigate();
   const { serviceName, price, _id } = useLoaderData();
 
   const handleAddReview = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
+    const photoURL = form.photoURL.value;
     const email = form.email.value;
     const review = form.review.value;
     const rating = form.rating.value;
 
-    console.log(name, email, review, rating);
+    // console.log(name, email, review, rating);
 
-    const reviews = {
+    const newReviews = {
       service: _id,
       serviceName: serviceName,
       price,
       name,
+      photoURL,
       email,
       review,
       rating,
     };
+
+    console.log(newReviews);
 
     fetch("http://localhost:5000/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(reviews),
+      body: JSON.stringify(newReviews),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -41,6 +47,8 @@ const AddReviewForm = () => {
         if (data.acknowledged) {
           toast.success("Thank you for your review!");
           form.reset();
+        //   <ReviewItem newReviews={newReviews}></ReviewItem>;
+          navigate(`/services/${_id}`);
         }
       })
       .catch((error) => console.error(error));
@@ -60,6 +68,17 @@ const AddReviewForm = () => {
                 type="text"
                 name="name"
                 placeholder="Enter username"
+                className="rounded-0"
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicPhoto">
+              <Form.Label className="text-white">Photo URL</Form.Label>
+              <Form.Control
+                type="text"
+                name="photoURL"
+                placeholder="Enter photo URL"
                 className="rounded-0"
                 required
               />

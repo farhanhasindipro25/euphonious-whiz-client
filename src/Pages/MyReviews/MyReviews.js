@@ -1,12 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { toast } from "react-hot-toast";
+import useTitle from "../../Hooks/useTitle";
 import { AuthContext } from "../../UserContext/AuthProvider";
 import ReviewRow from "./ReviewRow";
 
 const MyReviews = () => {
+  useTitle("My Reviews");
   const { user } = useContext(AuthContext);
   const [userReviews, setUserReviews] = useState([]);
+
+  console.log(userReviews);
 
   useEffect(() => {
     fetch(`http://localhost:5000/reviews?email=${user?.email}`)
@@ -33,15 +37,13 @@ const MyReviews = () => {
         });
     }
   };
+
   return (
     <div>
       <div>
-        <h5 className="text-center fw-semibold mt-5 mb-2">
-          Username: {user?.displayName}
-        </h5>
-        <p className="text-center fw-semibold">
+        <h5 className="text-center fw-semibold my-5 py-5">
           You have reviewed {userReviews.length} services.
-        </p>
+        </h5>
       </div>
       <div className="my-5 container">
         <Table>
@@ -58,6 +60,7 @@ const MyReviews = () => {
             {userReviews.map((userReview) => (
               <ReviewRow
                 key={userReview._id}
+                id={userReview._id}
                 userReview={userReview}
                 handleDelete={handleDelete}
               ></ReviewRow>

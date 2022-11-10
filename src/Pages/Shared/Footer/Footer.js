@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { GrFacebook } from "react-icons/gr";
 import { BsInstagram, BsTwitch, BsYoutube } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../UserContext/AuthProvider";
 
 const Footer = () => {
+  const { user } = useContext(AuthContext);
   return (
     <div className="bg-dark">
       <div className="pt-5 pb-4">
@@ -16,22 +18,68 @@ const Footer = () => {
         <BsYoutube></BsYoutube>
         <BsTwitch></BsTwitch>
       </div>
-      <div className="d-flex container justify-content-evenly mb-5 pb-5 w-50">
-        <Link to="/" className="text-white text-decoration-none">
-          Home
-        </Link>
-        <Link to="/blog" className="text-white text-decoration-none">
-          Blog
-        </Link>
-        <Link to="/services" className="text-white text-decoration-none">
-          Services
-        </Link>
-        <Link to="/login" className="text-white text-decoration-none">
-          Login
-        </Link>
-        <Link to="/signup" className="text-white text-decoration-none">
-          Signup
-        </Link>
+      <div className="d-flex container justify-content-evenly align-items-center mb-5 pb-5 w-50">
+        {user?.email ? (
+          <>
+            <Link
+              to="/"
+              className="text-decoration-none fw-semibold text-white mx-5"
+            >
+              Home
+            </Link>
+            <Link
+              to="/blog"
+              className="text-decoration-none fw-semibold text-white mx-5"
+            >
+              Blog
+            </Link>
+            <Link
+              to="/services"
+              className="text-decoration-none fw-semibold text-white mx-5"
+            >
+              Services
+            </Link>
+            <Link
+              to="/addservice"
+              className="text-decoration-none fw-semibold text-white p-3 ms-3"
+            >
+              Add Services
+            </Link>
+            <Link
+              to="/myreviews"
+              className="text-decoration-none fw-semibold text-white p-3 ms-3"
+            >
+              My Reviews
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link
+              to="/"
+              className="text-decoration-none fw-semibold text-white mx-5"
+            >
+              Home
+            </Link>
+            <Link
+              to="/blog"
+              className="text-decoration-none fw-semibold text-white mx-5"
+            >
+              Blog
+            </Link>
+            <Link
+              to="/services"
+              className="text-decoration-none fw-semibold text-white mx-5"
+            >
+              Services
+            </Link>
+            <Link
+              to="/login"
+              className="text-decoration-none fw-semibold text-white p-3 ms-3"
+            >
+              Login
+            </Link>
+          </>
+        )}
       </div>
       <div className="pb-5">
         <p className="text-white text-center pb-3 mb-0">

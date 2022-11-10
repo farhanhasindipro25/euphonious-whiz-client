@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const ReviewRow = ({ userReview, handleDelete }) => {
+const ReviewRow = ({ userReview, handleDelete, handleUpdate }) => {
   const { _id, serviceName, price, review, rating, service } = userReview;
 
   const [serviceReview, setServiceReview] = useState({});
@@ -26,22 +27,30 @@ const ReviewRow = ({ userReview, handleDelete }) => {
         <h6 className="fw-bold">{serviceName}</h6>
         <p className="fw-semibold text-info">Price: {price}</p>
       </td>
-      <td className="fw-semibold">{review.slice(0, 30) + "..."}</td>
+      <td className="fw-semibold">{review?.slice(0, 30) + "..."}</td>
       <td className="fw-semibold">
         <Button variant="warning" className=" rounded-0">
           {rating}
         </Button>
       </td>
       <td>
-        <Button variant="dark" className="mx-1 rounded-0">
-          Edit
+        <Button
+          variant="dark"
+          className="mx-1 rounded-0"
+        >
+          <Link
+            to={`/editreview/${_id}`}
+            className="text-decoration-none text-white"
+          >
+            EDIT
+          </Link>
         </Button>
         <Button
           variant="danger"
           className="mx-1 rounded-0"
           onClick={() => handleDelete(_id)}
         >
-          Delete
+          DELETE
         </Button>
       </td>
     </tr>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -10,6 +10,7 @@ import "react-photo-view/dist/react-photo-view.css";
 
 const ServiceDetail = () => {
   useTitle("Service Details");
+  const [allUserReviews, setAllUserReviews] = useState([]);
   const {
     _id,
     serviceName,
@@ -19,6 +20,7 @@ const ServiceDetail = () => {
     generalRating,
     reviews,
   } = useLoaderData();
+
   return (
     <div className="container mb-5 pt-5 pb-5">
       <Card className="rounded-0">
@@ -57,7 +59,10 @@ const ServiceDetail = () => {
         <Container>
           <Row className="g-5">
             {reviews.map((review) => (
-              <ReviewItem key={review._id} review={review}></ReviewItem>
+              <ReviewItem key={review._id} review={review}
+              setAllUserReviews={setAllUserReviews}
+              allUserReviews={allUserReviews}
+              ></ReviewItem>
             ))}
           </Row>
         </Container>

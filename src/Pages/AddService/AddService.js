@@ -1,14 +1,21 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
+import { useLoaderData } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
 
 const AddService = () => {
   useTitle("Add Service");
+  const services = useLoaderData();
+
+  const handleAddService = () => {
+    
+  }
   return (
     <div>
+      <h2>gfgf: {services}</h2>
       <div className="container mt-5 mb-5 pb-5 pt-5 bg-dark rounded-0 p-5">
         <div>
-          <Form>
+          <Form onSubmit={handleAddService}>
             <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label className="text-white">Service Name</Form.Label>
               <Form.Control

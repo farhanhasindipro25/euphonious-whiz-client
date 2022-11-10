@@ -3,8 +3,10 @@ import { Col, Image } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-const ReviewItem = ({ review }) => {
+const ReviewItem = ({ review, allUserReviews, setAllUserReviews }) => {
   const { reviewerName, reviewText, ReviewerImage, reviewerRating } = review;
+//   const { name, review, photoURL, rating } = newReviews;
+
   return (
     <Col lg="4" md="6" sm="12">
       <Card className="rounded-0">
