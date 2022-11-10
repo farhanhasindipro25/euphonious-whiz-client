@@ -1,12 +1,14 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import useTitle from "../../../Hooks/useTitle";
 import Services from "../../Services/Services";
 import ServiceBooking from "../ServiceBooking/ServiceBooking";
 import SlidingBanner from "../SlidingBanner/SlidingBanner";
 import WorkingProcess from "../WorkingProcess/WorkingProcess";
 
 const Home = () => {
+    useTitle('Home')
   return (
     <div>
       <SlidingBanner></SlidingBanner>

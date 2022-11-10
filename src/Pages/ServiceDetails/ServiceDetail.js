@@ -4,8 +4,12 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import ReviewItem from "./Reviews/ReviewItem";
 import { Container, Row } from "react-bootstrap";
+import useTitle from "../../Hooks/useTitle";
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
 
 const ServiceDetail = () => {
+  useTitle("Service Details");
   const {
     _id,
     serviceName,
@@ -19,11 +23,15 @@ const ServiceDetail = () => {
     <div className="container mb-5 pt-5 pb-5">
       <Card className="rounded-0">
         <div className="d-flex">
-          <Card.Img
-            variant="top"
-            className="img-fluid w-25 rounded-0"
-            src={serviceImage}
-          />
+          <PhotoProvider>
+            <PhotoView src={serviceImage}>
+              <Card.Img
+                variant="top"
+                className="img-fluid w-25 rounded-0"
+                src={serviceImage}
+              />
+            </PhotoView>
+          </PhotoProvider>
           <Card.Body className="pt-4">
             <Card.Title className="text-start fw-semibold my-4">
               {serviceName}

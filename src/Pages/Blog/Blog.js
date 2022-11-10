@@ -1,7 +1,9 @@
 import React from "react";
 import Accordion from "react-bootstrap/Accordion";
+import useTitle from "../../Hooks/useTitle";
 
 const Blog = () => {
+    useTitle("Blog");
   return (
     <div className="container mt-5 mb-5">
       <Accordion defaultActiveKey={["0", "1", "2", "3"]} alwaysopen>

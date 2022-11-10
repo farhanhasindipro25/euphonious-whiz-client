@@ -1,8 +1,9 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import useTitle from "../../../Hooks/useTitle";
 
 const AddReviewForm = () => {
+  useTitle("Add Review");
   return (
     <div>
       <div className="container mt-5 mb-5 pb-5 pt-5 bg-dark rounded-0 p-5">
