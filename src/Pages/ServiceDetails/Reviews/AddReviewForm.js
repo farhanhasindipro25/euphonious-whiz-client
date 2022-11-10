@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
+import { toast } from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
 import useTitle from "../../../Hooks/useTitle";
 
@@ -15,11 +16,13 @@ const AddReviewForm = () => {
     const review = form.review.value;
     const rating = form.rating.value;
 
+    console.log(name, email, review, rating);
+
     const reviews = {
       service: _id,
       serviceName: serviceName,
       price,
-      customer: name,
+      name,
       email,
       review,
       rating,
@@ -33,7 +36,13 @@ const AddReviewForm = () => {
       body: JSON.stringify(reviews),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          toast.success("Thank you for your review!");
+          form.reset();
+        }
+      })
       .catch((error) => console.error(error));
   };
   return (

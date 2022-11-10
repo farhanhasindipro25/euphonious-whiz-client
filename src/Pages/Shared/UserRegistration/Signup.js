@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useTitle from "../../../Hooks/useTitle";
 import { AuthContext } from "../../../UserContext/AuthProvider";
 
 const Signup = () => {
   useTitle("Signup");
-
+  const navigate = useNavigate();
   const { createUser } = useContext(AuthContext);
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -21,6 +21,7 @@ const Signup = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate("/services");
       })
       .catch((error) => console.error(error));
   };
