@@ -32,7 +32,7 @@ const Menubar = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto d-flex align-items-center">
-              {user?.uid ? (
+              {user?.email ? (
                 <>
                   <Link
                     to="/"

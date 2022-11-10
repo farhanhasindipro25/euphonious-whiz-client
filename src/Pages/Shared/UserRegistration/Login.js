@@ -15,7 +15,7 @@ const Login = () => {
   const googleProvider = new GoogleAuthProvider();
 
   const handleLogin = (event) => {
-    event.preevntDefault();
+    event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
