@@ -65,7 +65,7 @@ const ServiceDetail = () => {
           variant="dark"
           className="rounded-0 fw-semibold d-block mx-auto mt-5"
         >
-          <Link to="/addreview" className="text-decoration-none text-white">
+          <Link to={`/addreview/${_id}`} className="text-decoration-none text-white">
             ADD REVIEW
           </Link>
         </Button>
