@@ -10,7 +10,6 @@ import "react-photo-view/dist/react-photo-view.css";
 
 const ServiceDetail = () => {
   useTitle("Service Details");
-  const [allUserReviews, setAllUserReviews] = useState([]);
   const {
     _id,
     serviceName,
@@ -58,12 +57,12 @@ const ServiceDetail = () => {
         </h4>
         <Container>
           <Row className="g-5">
-            {reviews.map((review) => (
+            {/* {reviews.map((review) => (
               <ReviewItem key={review._id} review={review}
               setAllUserReviews={setAllUserReviews}
               allUserReviews={allUserReviews}
               ></ReviewItem>
-            ))}
+            ))} */}
           </Row>
         </Container>
         <Button
