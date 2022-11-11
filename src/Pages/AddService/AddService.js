@@ -1,18 +1,58 @@
 import React from "react";
+import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { useLoaderData } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
 
 const AddService = () => {
   useTitle("Add Service");
-  const services = useLoaderData();
+  const navigate = useNavigate();
+  const [newService, setNewService] = useState([]);
 
-  const handleAddService = () => {
+  const services = useLoaderData();
+  // console.log(services);
+
+  const handleAddService = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const serviceName = form.serviceName.value;
+    const serviceImage = form.serviceImage.value;
+    const price = form.price.value;
+    const generalRating = form.generalRating.value;
+    const description = form.description.value;
+
+    console.log(serviceName, serviceImage, price, generalRating, description);
+
+    const newServices = {
+      serviceName: serviceName,
+      serviceImage: serviceImage,
+      price,
+      description,
+      generalRating,
+    };
+
+      fetch("http://localhost:5000/services", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newServices),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.acknowledged) {
+            toast.success("Service added successfully!");
+            form.reset();
+            navigate(`/services`);
+          }
+        })
+        .catch((error) => console.error(error));
     
-  }
+  };
   return (
     <div>
-      <h2>gfgf: {services}</h2>
       <div className="container mt-5 mb-5 pb-5 pt-5 bg-dark rounded-0 p-5">
         <div>
           <Form onSubmit={handleAddService}>
@@ -20,6 +60,7 @@ const AddService = () => {
               <Form.Label className="text-white">Service Name</Form.Label>
               <Form.Control
                 type="text"
+                name="serviceName"
                 placeholder="Enter service name"
                 className="rounded-0"
                 required
@@ -29,6 +70,7 @@ const AddService = () => {
               <Form.Label className="text-white">Service Image URL</Form.Label>
               <Form.Control
                 type="text"
+                name="serviceImage"
                 placeholder="Enter service image URL"
                 className="rounded-0"
                 required
@@ -38,6 +80,7 @@ const AddService = () => {
               <Form.Label className="text-white">Price</Form.Label>
               <Form.Control
                 type="text"
+                name="price"
                 placeholder="Enter service price"
                 className="rounded-0"
                 required
@@ -47,6 +90,7 @@ const AddService = () => {
               <Form.Label className="text-white">Rating</Form.Label>
               <Form.Control
                 type="text"
+                name="generalRating"
                 placeholder="Enter service rating"
                 className="rounded-0"
                 required
@@ -58,6 +102,7 @@ const AddService = () => {
               <Form.Control
                 as="textarea"
                 type="text"
+                name="description"
                 placeholder="Enter service description"
                 className="rounded-0"
                 style={{ height: "100px" }}

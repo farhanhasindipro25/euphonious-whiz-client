@@ -51,6 +51,7 @@ const router = createBrowserRouter([
       {
         path: "/addservice",
         element: <AddService></AddService>,
+        loader: () => ("http://localhost:5000/services"),
       },
       {
         path: "/addreview/:id",
