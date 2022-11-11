@@ -3,33 +3,33 @@ import { Button, Form } from "react-bootstrap";
 import { toast } from "react-hot-toast";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import useTitle from "../../../Hooks/useTitle";
-import ReviewItem from "./ReviewItem";
 
 const AddReviewForm = () => {
   useTitle("Add Review");
   const navigate = useNavigate();
-  const { serviceName, price, _id } = useLoaderData();
+  const { serviceName, price, _id, serviceImage } = useLoaderData();
 
   const handleAddReview = (event) => {
     event.preventDefault();
     const form = event.target;
-    const name = form.name.value;
-    const photoURL = form.photoURL.value;
+    const reviewerName = form.name.value;
+    const ReviewerImage = form.photoURL.value;
     const email = form.email.value;
-    const review = form.review.value;
-    const rating = form.rating.value;
+    const reviewText = form.review.value;
+    const reviewerRating = form.rating.value;
 
     // console.log(name, email, review, rating);
 
     const newReviews = {
-      service: _id,
+      serviceID: _id,
       serviceName: serviceName,
+      serviceImage: serviceImage,
       price,
-      name,
-      photoURL,
+      reviewerName,
+      ReviewerImage,
       email,
-      review,
-      rating,
+      reviewText,
+      reviewerRating,
     };
 
     console.log(newReviews);
@@ -47,7 +47,6 @@ const AddReviewForm = () => {
         if (data.acknowledged) {
           toast.success("Thank you for your review!");
           form.reset();
-        //   <ReviewItem newReviews={newReviews}></ReviewItem>;
           navigate(`/services/${_id}`);
         }
       })

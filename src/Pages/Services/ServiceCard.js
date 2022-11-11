@@ -9,9 +9,9 @@ import "react-photo-view/dist/react-photo-view.css";
 const ServiceCard = ({ service }) => {
   const { _id, serviceName, serviceImage, price, description, generalRating } =
     service;
-  const getId = (event) => {
-    console.log(event);
-  };
+  // const getId = (event) => {
+  //   console.log(event);
+  // };
   return (
     <Col lg="4" md="6" sm="12">
       <Card className="rounded-0">
@@ -39,11 +39,7 @@ const ServiceCard = ({ service }) => {
           </div>
           <Card.Text>{description.slice(0, 100) + "..."}</Card.Text>
 
-          <Button
-            variant="dark"
-            className="rounded-0 d-block mx-auto"
-            onClick={() => getId(_id)}
-          >
+          <Button variant="dark" className="rounded-0 d-block mx-auto">
             <Link
               to={`/services/${_id}`}
               className="text-decoration-none text-white"

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -10,16 +10,19 @@ import "react-photo-view/dist/react-photo-view.css";
 
 const ServiceDetail = () => {
   useTitle("Service Details");
-  const {
-    _id,
-    serviceName,
-    serviceImage,
-    price,
-    description,
-    generalRating,
-    reviews,
-  } = useLoaderData();
+  const { _id, serviceName, serviceImage, price, description, generalRating } =
+    useLoaderData();
 
+  const [allReviews, setAllReviews] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/reviews?serviceID=${_id}`)
+      .then((res) => res.json())
+      .then((data) => setAllReviews(data))
+      .catch((error) => console.error(error));
+  }, [_id]);
+
+  // console.log(allReviews);
   return (
     <div className="container mb-5 pt-5 pb-5">
       <Card className="rounded-0">
@@ -57,19 +60,19 @@ const ServiceDetail = () => {
         </h4>
         <Container>
           <Row className="g-5">
-            {/* {reviews.map((review) => (
-              <ReviewItem key={review._id} review={review}
-              setAllUserReviews={setAllUserReviews}
-              allUserReviews={allUserReviews}
-              ></ReviewItem>
-            ))} */}
+            {allReviews.map((review) => (
+              <ReviewItem key={review._id} review={review}></ReviewItem>
+            ))}
           </Row>
         </Container>
         <Button
           variant="dark"
           className="rounded-0 fw-semibold d-block mx-auto mt-5"
         >
-          <Link to={`/addreview/${_id}`} className="text-decoration-none text-white">
+          <Link
+            to={`/addreview/${_id}`}
+            className="text-decoration-none text-white"
+          >
             ADD REVIEW
           </Link>
         </Button>

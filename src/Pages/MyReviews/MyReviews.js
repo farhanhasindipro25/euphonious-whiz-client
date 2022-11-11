@@ -10,10 +10,13 @@ const MyReviews = () => {
   const { user } = useContext(AuthContext);
   const [userReviews, setUserReviews] = useState([]);
 
-  console.log(userReviews);
+  // console.log(userReviews);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+    if (!user?.email) {
+      return;
+    }
+    fetch(`http://localhost:5000/reviews/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setUserReviews(data));
   }, [user?.email]);

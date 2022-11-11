@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const ReviewRow = ({ userReview, handleDelete, handleUpdate }) => {
-  const { _id, serviceName, price, review, rating, service } = userReview;
+const ReviewRow = ({ userReview, handleDelete }) => {
+  const { _id, serviceName, price, reviewText, reviewerRating, service } = userReview;
 
   const [serviceReview, setServiceReview] = useState({});
   useEffect(() => {
@@ -11,6 +11,8 @@ const ReviewRow = ({ userReview, handleDelete, handleUpdate }) => {
       .then((res) => res.json())
       .then((data) => setServiceReview(data));
   }, [service]);
+
+  // console.log(serviceReview.serviceImage);
 
   return (
     <tr>
@@ -27,17 +29,14 @@ const ReviewRow = ({ userReview, handleDelete, handleUpdate }) => {
         <h6 className="fw-bold">{serviceName}</h6>
         <p className="fw-semibold text-info">Price: {price}</p>
       </td>
-      <td className="fw-semibold">{review?.slice(0, 30) + "..."}</td>
+      <td className="fw-semibold">{reviewText?.slice(0, 30) + "..."}</td>
       <td className="fw-semibold">
         <Button variant="warning" className=" rounded-0">
-          {rating}
+          {reviewerRating}
         </Button>
       </td>
       <td>
-        <Button
-          variant="dark"
-          className="mx-1 rounded-0"
-        >
+        <Button variant="dark" className="mx-1 rounded-0">
           <Link
             to={`/editreview/${_id}`}
             className="text-decoration-none text-white"

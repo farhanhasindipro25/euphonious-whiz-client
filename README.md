@@ -31,5 +31,6 @@
 
 ```
 email: dead@shots.com
+username: Farhan Hasin
 password: flowdlawton
 ```
