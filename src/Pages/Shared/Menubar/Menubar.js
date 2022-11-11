@@ -24,7 +24,7 @@ const Menubar = () => {
       >
         <Container>
           <Link
-            to="/"
+            to="/homepage"
             className="text-decoration-none fw-semibold text-white fs-5"
           >
             EUPHONIOUS WHIZ REVIEWS
@@ -35,7 +35,7 @@ const Menubar = () => {
               {user?.email ? (
                 <>
                   <Link
-                    to="/"
+                    to="/homepage"
                     className="text-decoration-none fw-semibold text-white mx-5"
                   >
                     Home
@@ -75,7 +75,7 @@ const Menubar = () => {
               ) : (
                 <>
                   <Link
-                    to="/"
+                    to="/homepage"
                     className="text-decoration-none fw-semibold text-white mx-5"
                   >
                     Home

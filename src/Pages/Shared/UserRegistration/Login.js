@@ -6,6 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import useTitle from "../../../Hooks/useTitle";
 import { AuthContext } from "../../../UserContext/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
   useTitle("Login");
@@ -25,6 +26,7 @@ const Login = () => {
         console.log(user);
         form.reset();
         navigate("/services");
+        toast.success('Welcome aboard music fellas!');
       })
       .catch((error) => console.error(error));
   };

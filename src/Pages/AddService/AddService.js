@@ -1,17 +1,13 @@
 import React from "react";
-import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { toast } from "react-hot-toast";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
 
 const AddService = () => {
   useTitle("Add Service");
   const navigate = useNavigate();
-  const [newService, setNewService] = useState([]);
 
-  const services = useLoaderData();
-  // console.log(services);
 
   const handleAddService = (event) => {
     event.preventDefault();
@@ -22,7 +18,7 @@ const AddService = () => {
     const generalRating = form.generalRating.value;
     const description = form.description.value;
 
-    console.log(serviceName, serviceImage, price, generalRating, description);
+    // console.log(serviceName, serviceImage, price, generalRating, description);
 
     const newServices = {
       serviceName: serviceName,
@@ -56,6 +52,9 @@ const AddService = () => {
       <div className="container mt-5 mb-5 pb-5 pt-5 bg-dark rounded-0 p-5">
         <div>
           <Form onSubmit={handleAddService}>
+          <h5 className="text-white text-center my-5 fw-bold">
+            ADD A NEW SERVICE
+          </h5>
             <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label className="text-white">Service Name</Form.Label>
               <Form.Control

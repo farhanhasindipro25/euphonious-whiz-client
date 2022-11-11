@@ -8,6 +8,7 @@ import ServiceDetail from "../Pages/ServiceDetails/ServiceDetail";
 import Services from "../Pages/Services/Services";
 import Login from "../Pages/Shared/UserRegistration/Login";
 import Signup from "../Pages/Shared/UserRegistration/Signup";
+import Route404 from "./Route404";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../Layouts/Main");
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
     element: <Main></Main>,
     children: [
       {
-        path: "/",
+        path: "/homepage",
         element: <Home></Home>,
       },
       {
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
       {
         path: "/addservice",
         element: <AddService></AddService>,
-        loader: () => ("http://localhost:5000/services"),
+        loader: () => "http://localhost:5000/services",
       },
       {
         path: "/addreview/:id",
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
           fetch(`http://localhost:5000/reviews/${params.id}`),
       },
     ],
+  },
+  {
+    path: "/*",
+    element: <Route404></Route404>,
   },
 ]);
 
