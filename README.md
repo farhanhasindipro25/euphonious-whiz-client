@@ -2,7 +2,7 @@
 **A website based on service reviews of a person who fixes musical instruments.**
 
 
-**Live Site Link: https://euphonious-whiz.web.app**
+**Live Site Link: https://euphonious-whiz.web.app/homepage**
 
 ### Features
 1. You can view six default services provided by Euphonious Whiz along with the description, ratings, and price.

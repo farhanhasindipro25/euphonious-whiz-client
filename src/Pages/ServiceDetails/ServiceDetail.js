@@ -16,7 +16,9 @@ const ServiceDetail = () => {
   const [allReviews, setAllReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?serviceID=${_id}`)
+    fetch(
+      `https://b6a11-service-review-server-side-beta.vercel.app/reviews?serviceID=${_id}`
+    )
       .then((res) => res.json())
       .then((data) => setAllReviews(data))
       .catch((error) => console.error(error));

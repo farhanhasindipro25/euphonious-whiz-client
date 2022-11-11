@@ -3,11 +3,14 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const ReviewRow = ({ userReview, handleDelete }) => {
-  const { _id, serviceName, price, reviewText, reviewerRating, service } = userReview;
+  const { _id, serviceName, price, reviewText, reviewerRating, service } =
+    userReview;
 
   const [serviceReview, setServiceReview] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${service}`)
+    fetch(
+      `https://b6a11-service-review-server-side-beta.vercel.app/services/${service}`
+    )
       .then((res) => res.json())
       .then((data) => setServiceReview(data));
   }, [service]);

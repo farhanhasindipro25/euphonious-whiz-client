@@ -30,13 +30,18 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services></Services>,
-        loader: ({ params }) => fetch("http://localhost:5000/services"),
+        loader: ({ params }) =>
+          fetch(
+            "https://b6a11-service-review-server-side-beta.vercel.app/services"
+          ),
       },
       {
         path: "/services/:id",
         element: <ServiceDetail></ServiceDetail>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://b6a11-service-review-server-side-beta.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "/login",
@@ -61,7 +66,8 @@ const router = createBrowserRouter([
             <AddService></AddService>
           </PrivateRoute>
         ),
-        loader: () => "http://localhost:5000/services",
+        loader: () =>
+          "https://b6a11-service-review-server-side-beta.vercel.app/services",
       },
       {
         path: "/addreview/:id",
@@ -71,7 +77,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://b6a11-service-review-server-side-beta.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "/editreview/:id",
@@ -81,7 +89,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/reviews/${params.id}`),
+          fetch(
+            `https://b6a11-service-review-server-side-beta.vercel.app/reviews/${params.id}`
+          ),
       },
     ],
   },

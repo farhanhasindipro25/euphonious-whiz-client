@@ -8,7 +8,6 @@ const AddService = () => {
   useTitle("Add Service");
   const navigate = useNavigate();
 
-
   const handleAddService = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -28,33 +27,32 @@ const AddService = () => {
       generalRating,
     };
 
-      fetch("http://localhost:5000/services", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(newServices),
+    fetch("https://b6a11-service-review-server-side-beta.vercel.app/services", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newServices),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          toast.success("Service added successfully!");
+          form.reset();
+          navigate(`/services`);
+        }
       })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.acknowledged) {
-            toast.success("Service added successfully!");
-            form.reset();
-            navigate(`/services`);
-          }
-        })
-        .catch((error) => console.error(error));
-    
+      .catch((error) => console.error(error));
   };
   return (
     <div>
       <div className="container mt-5 mb-5 pb-5 pt-5 bg-dark rounded-0 p-5">
         <div>
           <Form onSubmit={handleAddService}>
-          <h5 className="text-white text-center my-5 fw-bold">
-            ADD A NEW SERVICE
-          </h5>
+            <h5 className="text-white text-center my-5 fw-bold">
+              ADD A NEW SERVICE
+            </h5>
             <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label className="text-white">Service Name</Form.Label>
               <Form.Control

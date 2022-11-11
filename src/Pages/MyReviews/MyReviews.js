@@ -3,6 +3,7 @@ import { Table } from "react-bootstrap";
 import { toast } from "react-hot-toast";
 import useTitle from "../../Hooks/useTitle";
 import { AuthContext } from "../../UserContext/AuthProvider";
+import EditReviewForm from "./EditReviewForm";
 import ReviewRow from "./ReviewRow";
 
 const MyReviews = () => {
@@ -16,7 +17,9 @@ const MyReviews = () => {
     if (!user?.email) {
       return;
     }
-    fetch(`http://localhost:5000/reviews/${user?.email}`)
+    fetch(
+      `https://b6a11-service-review-server-side-beta.vercel.app/reviews/${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setUserReviews(data));
   }, [user?.email]);
@@ -24,9 +27,12 @@ const MyReviews = () => {
   const handleDelete = (_id) => {
     const proceed = window.confirm("Confirm delete!");
     if (proceed) {
-      fetch(`http://localhost:5000/reviews/${_id}`, {
-        method: "DELETE",
-      })
+      fetch(
+        `https://b6a11-service-review-server-side-beta.vercel.app/reviews/${_id}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -68,6 +74,7 @@ const MyReviews = () => {
                 handleDelete={handleDelete}
               ></ReviewRow>
             ))}
+            {<EditReviewForm userReviews={userReviews}></EditReviewForm>}
           </tbody>
         </Table>
       </div>

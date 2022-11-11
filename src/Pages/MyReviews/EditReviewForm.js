@@ -3,11 +3,11 @@ import { Button, Form } from "react-bootstrap";
 import { useLoaderData } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
 
-const EditReviewForm = () => {
+const EditReviewForm = ({ userReviews }) => {
   useTitle("Edit Review");
-  // const storedReview = useLoaderData();
+  const storedReview = useLoaderData();
   // const { _id, serviceName } = storedReview;
-  // console.log(storedReview);
+  console.log(userReviews);
 
   const handleUpdate = (event) => {
     event.preventDefault();
@@ -25,7 +25,7 @@ const EditReviewForm = () => {
       reviewerRating,
     };
 
-    // fetch(`http://localhost:5000/reviews/${_id}`, {
+    // fetch(`https://b6a11-service-review-server-side-beta.vercel.app/reviews/${_id}`, {
     //   method: "PUT",
     //   headers: {
     //     "content-type": "application/json",
