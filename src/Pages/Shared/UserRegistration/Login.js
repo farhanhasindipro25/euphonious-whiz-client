@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import useTitle from "../../../Hooks/useTitle";
 import { AuthContext } from "../../../UserContext/AuthProvider";
@@ -11,6 +11,10 @@ import { toast } from "react-hot-toast";
 const Login = () => {
   useTitle("Login");
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location?.state?.from.pathname || '/homepage'
+
   const { signIn, providerLogin } = useContext(AuthContext);
 
   const googleProvider = new GoogleAuthProvider();
@@ -25,7 +29,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         form.reset();
-        navigate("/services");
+        navigate(from, {replace: true});
         toast.success('Welcome aboard music fellas!');
       })
       .catch((error) => console.error(error));
