@@ -18,7 +18,12 @@ const Footer = () => {
         <BsYoutube></BsYoutube>
         <BsTwitch></BsTwitch>
       </div>
-      <div className="d-flex container justify-content-evenly align-items-center mb-5 pb-5 w-50">
+      <div
+        className="d-flex container justify-content-lg-center
+      justify-content-md-center
+      justify-content-sm-center
+      justify-content-center align-items-center mb-5 pb-5 w-50 flex-lg-row flex-md-row flex-sm-column flex-column"
+      >
         {user?.email ? (
           <>
             <Link
@@ -41,13 +46,13 @@ const Footer = () => {
             </Link>
             <Link
               to="/addservice"
-              className="text-decoration-none fw-semibold text-white p-3 ms-3"
+              className="text-decoration-none fw-semibold text-white mx-5"
             >
               Add Services
             </Link>
             <Link
               to="/myreviews"
-              className="text-decoration-none fw-semibold text-white p-3 ms-3"
+              className="text-decoration-none fw-semibold text-white mx-5"
             >
               My Reviews
             </Link>

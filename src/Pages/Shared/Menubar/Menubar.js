@@ -41,37 +41,37 @@ const Menubar = () => {
                 <>
                   <Link
                     to="/homepage"
-                    className="text-decoration-none fw-semibold text-white mx-5"
+                    className="text-decoration-none fw-semibold text-white me-5"
                   >
                     Home
                   </Link>
                   <Link
                     to="/blog"
-                    className="text-decoration-none fw-semibold text-white mx-5"
+                    className="text-decoration-none fw-semibold text-white me-5"
                   >
                     Blog
                   </Link>
                   <Link
                     to="/services"
-                    className="text-decoration-none fw-semibold text-white mx-5"
+                    className="text-decoration-none fw-semibold text-white me-5"
                   >
                     Services
                   </Link>
                   <Link
                     to="/addservice"
-                    className="text-decoration-none fw-semibold text-white p-3 ms-3"
+                    className="text-decoration-none fw-semibold text-white"
                   >
                     Add Services
                   </Link>
                   <Link
                     to="/myreviews"
-                    className="text-decoration-none fw-semibold text-white p-3 ms-3"
+                    className="text-decoration-none fw-semibold text-white mx-5"
                   >
                     My Reviews
                   </Link>
                   <Link
                     to=""
-                    className="text-decoration-none fw-semibold text-white p-3 ms-3"
+                    className="text-decoration-none fw-semibold text-white"
                     onClick={handleLogOut}
                   >
                     Logout

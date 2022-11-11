@@ -16,10 +16,10 @@ const SlidingBanner = () => {
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
           <img className="d-block w-100" src={slide1} alt="First slide" />
-          <Carousel.Caption className="mb-5 pb-5">
+          <Carousel.Caption className="mb-lg-5 pb-lg-5 d-lg-block d-md-block d-sm-none d-none">
             <h2>
               Find service reviews of{" "}
-              <span className="fw-bold bg-dark text-warning p-2">
+              <span className="fw-bold bg-dark text-warning p-lg-2 p-md-1 p-sm-0 p-0">
                 Euphonious Whiz
               </span>
               , and add your own!
@@ -31,10 +31,10 @@ const SlidingBanner = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={slide2} alt="Second slide" />
-          <Carousel.Caption className="mb-5 pb-5">
+          <Carousel.Caption className="mb-lg-5 pb-lg-5 d-lg-block d-md-block d-sm-none d-none">
             <h2>
               Find service reviews of{" "}
-              <span className="fw-bold text-dark bg-warning p-2">
+              <span className="fw-bold text-dark bg-warning p-lg-2 p-md-1 p-sm-0 p-0">
                 Euphonious Whiz
               </span>
               , and add your own!
@@ -46,11 +46,13 @@ const SlidingBanner = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={slide3} alt="Third slide" />
-          <Carousel.Caption className="mb-5 pb-5">
+          <Carousel.Caption className="mb-lg-5 pb-lg-5 d-lg-block d-md-block d-sm-none d-none">
             <h2>
               Find service reviews of{" "}
-              <span className="fw-bold bg-danger p-2">Euphonious Whiz</span>,
-              and add your own!
+              <span className="fw-bold bg-danger p-lg-2 p-md-1 p-sm-0 p-0">
+                Euphonious Whiz
+              </span>
+              , and add your own!
             </h2>
             <p className="mb-5 pb-5">
               Don't be afraid to give a negative review!
