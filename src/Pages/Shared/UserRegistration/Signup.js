@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import useTitle from "../../../Hooks/useTitle";
 import { AuthContext } from "../../../UserContext/AuthProvider";
@@ -22,6 +23,7 @@ const Signup = () => {
         const user = result.user;
         console.log(user);
         navigate("/services");
+        toast.success('Welcome aboard music fellas!');
       })
       .catch((error) => console.error(error));
   };

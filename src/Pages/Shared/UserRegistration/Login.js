@@ -40,7 +40,8 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate("/services");
+        navigate(from, {replace: true});
+        toast.success('Welcome aboard music fellas!');
       })
       .catch((error) => console.error(error));
   };
